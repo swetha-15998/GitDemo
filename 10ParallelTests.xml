@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="6">
+
+  <test thread-count="5" name="TestFolder1" >
+    <classes>
+      <class name="test.R1"/>
+      <class name="test.R2"/>
+    </classes>
+   </test> <!-- Test -->
+   
+   <test thread-count="5" name="TestFolder2">
+    <classes>
+      <class name="test.R3"/>
+      
+      <class name="test.R4">
+      	<methods>
+      		<include name="apiLoginHome"></include>
+      	</methods>
+      </class>
+    </classes>
+   </test> <!-- Test -->
+   
+   <test thread-count="5" name="TestFolder3">
+    <classes>
+      <class name="test.R5">
+      	<methods>
+      		<exclude name="excludeTest"></exclude>
+      	</methods>
+      </class>
+    </classes>
+   </test> <!-- Test -->
+   
+   
+  <test thread-count="5" name="TestFolder4">
+    <classes>
+      <class name="test.R6">
+      	<methods>
+      		<exclude name="aregex.*"></exclude>
+      	</methods>
+      </class>
+      <class name="test.R7"/>
+      <class name="test.R8"/>
+      <class name="test.R9"/>
+      <class name="test.R13"/>
+    </classes>
+   </test> <!-- Test -->
+   
+</suite> <!-- Suite -->
